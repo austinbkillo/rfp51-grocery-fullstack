@@ -11,3 +11,7 @@ app.use(cors());
 app.listen(port, () => {
   console.log("listening on 8080");
 });
+
+app.get('/', (req, res) => {
+
+})
