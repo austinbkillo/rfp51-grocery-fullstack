@@ -12,19 +12,21 @@ app.use(express.static(path.join(__dirname,'../client/dist')));
 app.listen(port, () => {
 });
 
-// app.get('/', (req, res) => {
-//   let sql = 'SELECT itemName, quantity FROM groceries'
-//   db.query(sql, (err, data)=>{
-//     if (err) {
-//       console.error(err);
-//     } else {
-//       console.log('WE BE GETTIN PAID!')
-//       res.send(data);
-//     }
-//   })
-// })
+app.get('/groceries', (req, res) => {
+  let sql = 'SELECT itemName, quantity FROM groceries'
+  db.query(sql, (err, data)=>{
+    if (err) {
+      console.error(err);
+    } else {
+      console.log('SENDING OVER DATA NOW: ')
+      res.send(data);
+    }
+  })
+})
 
-// app.get('/', (req, res)=>{
+// app.get('/groceries', (req, res)=>{
+//   db.query()
 //   res.status(200);
-//   res.send('text here')
+//   console.log(res)
+//   res.end('big logs')
 // })
