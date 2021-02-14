@@ -1,8 +1,9 @@
-import React from 'react'
-function GroceryList(props) {
+import React from 'react';
+import GroceryItem from './GroceryItem.jsx';
+function GroceryList({groceries}) {
   return (
     <div>
-      Here goes my Grocery List
+      {groceries.map(item => <GroceryItem item={item}/>)}
     </div>
   )
 }

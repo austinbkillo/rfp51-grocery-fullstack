@@ -23,6 +23,18 @@ app.get('/groceries', (req, res) => {
     }
   })
 })
+app.post('/groceries', (req, res)=>{
+  console.log(req)
+  let sql = 'INSERT INTO groceries (itemName, quantity) VALUES '
+  db.query(sql, (err, data)=> {
+    if (err) {
+      console.error(err);
+      res.end();
+    } else {
+      res.end('Posted');
+    }
+  })
+})
 
 // app.get('/groceries', (req, res)=>{
 //   db.query()
